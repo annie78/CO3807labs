@@ -11,7 +11,7 @@ else {
     $sql = "insert into users (firstname, surname, email, password) values ('".$_POST['fname']."','".$_POST['sname']."','".$_POST['email']."','".$_POST['pass']."')";
 
     if (!$mysqli->query($sql)) {
-        echo "Error: "$mysqli->error;
+        echo "Error: ".$mysqli->error;
     }
     else {
         //here we could redirect he user back to another page or simple output a success message

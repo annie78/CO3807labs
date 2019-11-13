@@ -1,5 +1,5 @@
 <?php
-include connect.php;
+include 'connect.php';
 
 $sql = "SELECT ID, firstname, surname, email FROM users";
 $result = $mysqli->query ($sql);
@@ -20,6 +20,7 @@ if ($result->num_rows > 0) {
           echo "<td>".$row['firstname']."</td>";
           echo "<td>".$row['surname']."</td>";
           echo "<td>".$row['email']."</td>";
+          echo '<td><a href="edit.php?id='.$row['ID'].'">Edit</a></td>';
           echo "</tr>";
       }
       echo "</table>";
