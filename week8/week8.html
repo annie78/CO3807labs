@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+  <head>
+    <title>edit</title> 
+    </head>
+<script src=https://code.jquery.com/jquery-3.4.1.js integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js">
+</script>
+    <body>
+<form action="" id="myValidatedForm">
+  First name:<br>
+
+  <input type="text" name="firstname" id="firstname" value="">
+  <br>
+
+  Last name:<br>
+  <input type="text" name="lastname" id="lastname"  value="">
+  <br>
+
+  Email :<br>
+  <input type="text" name="email" id="email" value=""> 
+  <br>
+Password :<br>
+<input type="text" name="password" id="password" value=""> 
+  <br>
+Confirm Password :<br>
+<input type="text" name="confirm password" id="confirm password" value=""> 
+  <br>
+
+  <input type="submit" value="Submit">
+</form> 
+<script>
+$("#myValidatedForm").validate({
+	
+	rules: {
+		firstname: "required",
+		lastname: "required",
+		email: {
+			required: true,
+			email: true
+		},
+		password: {
+			required: true,
+			minlength: 5
+		},
+		confirm_password:{
+			required: true,
+			minlength: 5,
+			equalTo: "#password"
+		}
+	},
+	
+	messages: {
+		firstname: "Please enter your firstname",
+		lastname: "Please enter your lastname",
+		password: {
+			required: "Please provide a password",
+			minlength: "Your password must be at least 5 characters long"
+		},
+		confirm_password: {
+			required: "Please provide a password",
+			minlength: "Your password must be at least 5 characters long",
+			equalTo: "Your passwords do not match"
+		},
+		email: "Please enter a valid email address"
+	}
+});
+</script>
+    </body>
+    </html>

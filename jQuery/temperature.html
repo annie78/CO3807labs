@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+  <head>
+    <title>jQuery test</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>$(document).ready(function(){
+    $("#fah").keyup(function(){
+		$('#message').empty();
+		var ftemp = parseFloat($('#fah').val());
+		var cent = (ftemp - 32) / 1.8; 
+		$('#cent').empty();
+		$('#cent').append(cent+" degrees C");
+    });
+});
+</script>
+ </head>
+  <body>
+<h1>jQuery temperature convertor</h1>
+<h2>F to C</h2>
+	Fahrenheit: <input type="textbox" id="fah" name="fah"/>
+<br>
+	Centigrade: <p id="cent"></p>
+ </body>
+</html>
+

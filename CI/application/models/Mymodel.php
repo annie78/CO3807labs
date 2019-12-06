@@ -15,5 +15,10 @@ class mymodel extends CI_Model {
      }
      return $data;
     }
+
+    public function insert($data){
+	
+	$this->db->insert('testdata',$data);
+}
 }
 ?>
